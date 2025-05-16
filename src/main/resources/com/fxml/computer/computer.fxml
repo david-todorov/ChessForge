@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.controllers.ComputerController"
+      alignment="CENTER" spacing="20">
+
+    <Label text="Computer"/>
+
+    <Label text="This scene is supposed to start the Verses Computer mode game"/>
+    <Label text="Currently just have a button which goes back to the main menu"/>
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Button text="Back to Main Menu"
+            layoutX="200.0"
+            layoutY="180.0"
+            onAction="#onBackToMainMenu"/>
+
+</VBox>

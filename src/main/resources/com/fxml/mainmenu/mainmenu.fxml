@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.controllers.MainMenuViewController"
+      alignment="CENTER" spacing="20">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Hello guys, this scene serves as entry point for our Game"/>
+    <Label text="Here the players can chose either to play one verses another or against a computer"/>
+
+    <Button text="2-Player Mode" fx:id="Player2" onAction="#startTwoPlayerMode"/>
+    <Button text="Computer" onAction="#startComputerMode"/>
+
+</VBox>
