@@ -1,27 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
 <VBox xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.controllers.TwoPlayerController"
-      alignment="CENTER" spacing="20" fx:id="boardPane">
+      alignment="CENTER" spacing="20">
 
-    <Label text="Two Player"/>
+    <Label text="Two Player" />
 
-    <Label text="This scene is supposed to start the two player mode game"/>
-    <Label text="Players takes turns one after the other"/>
-    <Label text="Currently just have a button which goes back to the main menu"/>
+    <!-- Chessboard GridPane -->
+    <GridPane fx:id="chessBoard" gridLinesVisible="true"
+              prefWidth="480" prefHeight="480"
+              style="-fx-max-width: 480px; -fx-max-height: 480px;">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+            <ColumnConstraints percentWidth="12.5"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+            <RowConstraints percentHeight="12.5"/>
+        </rowConstraints>
+
+        <!-- 64 Squares -->
+        <!-- Each square is a StackPane with background color: light or dark -->
+        <!-- You can adjust colors with CSS later if desired -->
+        <!-- Row 0 -->
+        <!-- Row 0 (a8 to h8) -->
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="a8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-background-color: #b58863;"><ImageView fx:id="b8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="2" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="c8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="3" style="-fx-background-color: #b58863;"><ImageView fx:id="d8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="4" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="e8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="5" style="-fx-background-color: #b58863;"><ImageView fx:id="f8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="6" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="g8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="0" GridPane.columnIndex="7" style="-fx-background-color: #b58863;"><ImageView fx:id="h8" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 1 (a7 to h7) -->
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-background-color: #b58863;"><ImageView fx:id="a7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="b7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="2" style="-fx-background-color: #b58863;"><ImageView fx:id="c7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="3" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="d7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="4" style="-fx-background-color: #b58863;"><ImageView fx:id="e7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="5" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="f7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="6" style="-fx-background-color: #b58863;"><ImageView fx:id="g7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="1" GridPane.columnIndex="7" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="h7" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 2 (a6 to h6) -->
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="a6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="1" style="-fx-background-color: #b58863;"><ImageView fx:id="b6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="2" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="c6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="3" style="-fx-background-color: #b58863;"><ImageView fx:id="d6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="4" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="e6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="5" style="-fx-background-color: #b58863;"><ImageView fx:id="f6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="6" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="g6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="2" GridPane.columnIndex="7" style="-fx-background-color: #b58863;"><ImageView fx:id="h6" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 3 (a5 to h5) -->
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-background-color: #b58863;"><ImageView fx:id="a5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="b5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="2" style="-fx-background-color: #b58863;"><ImageView fx:id="c5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="3" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="d5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="4" style="-fx-background-color: #b58863;"><ImageView fx:id="e5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="5" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="f5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="6" style="-fx-background-color: #b58863;"><ImageView fx:id="g5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="3" GridPane.columnIndex="7" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="h5" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 4 (a4 to h4) -->
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="a4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="1" style="-fx-background-color: #b58863;"><ImageView fx:id="b4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="2" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="c4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="3" style="-fx-background-color: #b58863;"><ImageView fx:id="d4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="4" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="e4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="5" style="-fx-background-color: #b58863;"><ImageView fx:id="f4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="6" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="g4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="4" GridPane.columnIndex="7" style="-fx-background-color: #b58863;"><ImageView fx:id="h4" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 5 (a3 to h3) -->
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-background-color: #b58863;"><ImageView fx:id="a3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="1" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="b3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="2" style="-fx-background-color: #b58863;"><ImageView fx:id="c3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="3" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="d3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="4" style="-fx-background-color: #b58863;"><ImageView fx:id="e3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="5" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="f3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="6" style="-fx-background-color: #b58863;"><ImageView fx:id="g3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="5" GridPane.columnIndex="7" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="h3" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 6 (a2 to h2) -->
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="0" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="a2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="1" style="-fx-background-color: #b58863;"><ImageView fx:id="b2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="2" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="c2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="3" style="-fx-background-color: #b58863;"><ImageView fx:id="d2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="4" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="e2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="5" style="-fx-background-color: #b58863;"><ImageView fx:id="f2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="6" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="g2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="6" GridPane.columnIndex="7" style="-fx-background-color: #b58863;"><ImageView fx:id="h2" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+        <!-- Row 7 (a1 to h1) -->
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="0" style="-fx-background-color: #b58863;"><ImageView fx:id="a1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="1" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="b1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="2" style="-fx-background-color: #b58863;"><ImageView fx:id="c1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="3" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="d1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="4" style="-fx-background-color: #b58863;"><ImageView fx:id="e1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="5" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="f1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="6" style="-fx-background-color: #b58863;"><ImageView fx:id="g1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+        <StackPane GridPane.rowIndex="7" GridPane.columnIndex="7" style="-fx-background-color: #f0d9b5;"><ImageView fx:id="h1" fitWidth="60" fitHeight="60" preserveRatio="true" /></StackPane>
+
+    </GridPane>
+
+
+
+    <Button text="Back to Main Menu" onAction="#onBackToMainMenu" />
+
     <padding>
-        <Insets top="30" right="30" bottom="30" left="30"/>
+        <Insets top="20" right="20" bottom="20" left="20" />
     </padding>
-
-    <Button text="Back to Main Menu"
-            layoutX="200.0"
-            layoutY="180.0"
-            onAction="#onBackToMainMenu"/>
-
 </VBox>
