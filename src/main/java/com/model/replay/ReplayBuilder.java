@@ -1,0 +1,63 @@
+package com.model.replay;
+
+import java.util.Date;
+import java.util.List;
+
+import com.model.board.Board;
+import com.model.game.types.GameType;
+import com.model.user.User;
+
+public final class ReplayBuilder {
+
+    private String matchID;
+
+    private Date date;
+
+    private User whiteUser;
+
+    private User blackUser;
+
+    private List<Board> boards;
+
+    private GameType gameType;
+
+    public ReplayBuilder matchID(final String matchID) {
+        this.matchID = matchID;
+        return this;
+    }
+
+    public ReplayBuilder date(final Date date) {
+        this.date = new Date(date.getTime());
+        return this;
+    }
+
+    public ReplayBuilder whiteUser(final User whiUser) {
+        this.whiteUser = whiUser;
+        return this;
+    }
+
+
+    public ReplayBuilder blackUser(final User blackUser) {
+        this.blackUser = blackUser;
+        return this;
+
+    }
+
+
+    public ReplayBuilder boards(final List<Board> boards) {
+        this.boards = boards;
+        return this;
+    }
+
+
+    public ReplayBuilder gameType(final GameType gameType) {
+        this.gameType = gameType;
+        return this;
+    }
+
+
+    public ReplayData build() {
+        return new ReplayData(matchID, date, whiteUser, blackUser, boards, gameType);
+    }
+
+}

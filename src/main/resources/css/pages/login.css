@@ -1,0 +1,30 @@
+@import "../base.css";
+
+#login-root {
+    
+    -fx-min-width: 800px;
+    -fx-pref-width: 800px;
+    
+    -fx-min-height: 600px;
+    -fx-pref-height: 600px;
+    
+}
+
+.login-input-field {
+    -fx-min-width: 300;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}
+
+.login-button {
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+
+.login-button:hover {
+    -fx-background-color: #007acc;
+}
+
+.login-error-info {
+    -fx-fill: red;
+}

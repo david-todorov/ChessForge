@@ -1,23 +1,22 @@
 package com;
 
-import com.scenes.MainMenuScene;
-import com.utils.UIManager;
+import com.model.ApplicationInstance;
+import com.views.pages.PageLoader;
+import com.views.pages.Pages;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class ChessForgeApplication extends Application {
 
+    public static void main(final String[] args) {
+        launch(args);
+    }
+
     @Override
-    public void start(Stage stage) throws Exception {
-
-        // Main Scene which is our case is the main menu
-        MainMenuScene mainMenu = new MainMenuScene();
-        UIManager.initialize(stage, mainMenu); // Init once
-
-        UIManager.getInstance().switchMainScene();
+    public void start(final Stage primaryStage) throws IOException {
+        PageLoader.getInstance().switchPage(primaryStage, Pages.LOADING, new ApplicationInstance());
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
 }

@@ -1,0 +1,67 @@
+@import "../base.css";
+
+#settings-root {
+    
+    -fx-min-width: 800;
+    -fx-pref-width: 800;
+    
+    -fx-min-height: 500;
+    -fx-pref-height: 500;
+    
+}
+
+.timer-choice {
+    -fx-background-color: #2e2e2e;
+    -fx-text-fill: white;
+    -fx-font-family: "Cascadia Code PL";
+    -fx-font-size: 16px;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #555;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 1);
+}
+
+.timer-choice:hover {
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: #888;
+}
+
+.timer-choice:focused {
+    -fx-border-color: #00bfff;
+    -fx-background-color: #3a3a3a;
+}
+
+.timer-choice .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.timer-choice .arrow {
+    -fx-background-color: white;
+}
+
+.dark-slider {
+    -fx-padding: 5;
+}
+
+.dark-slider .track {
+    -fx-background-color: #444;
+    -fx-background-radius: 5;
+    -fx-pref-height: 6;
+}
+
+.dark-slider .thumb {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 4, 0.2, 0, 1);
+}
+
+.dark-slider .thumb:hover {
+    -fx-background-color: #00bfff;
+}
+
+.dark-slider .filled-track {
+    -fx-background-color: #00bfff;
+}

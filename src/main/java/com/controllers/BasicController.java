@@ -1,0 +1,34 @@
+package com.controllers;
+
+import com.model.Model;
+import com.views.interfaces.View;
+
+public class BasicController implements Controller {
+
+    private View view;
+    private Model model;
+
+
+    @Override
+    public final void setView(final View view) {
+        this.view = view;
+    }
+
+    @Override
+    public final View getView() {
+        return this.view;
+    }
+
+
+    @Override
+    public final Model getModel() {
+        return this.model;
+    }
+
+
+    @Override
+    public void setModel(final Model model) {
+        this.model = model;
+    }
+
+}

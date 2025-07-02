@@ -1,0 +1,34 @@
+
+.back-button {
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+
+.red {
+    -fx-border-color: #ee5253;
+}
+
+.green {
+    -fx-border-color: #10ac84;
+}
+
+.blue {
+    -fx-border-color: #0abde3;
+}
+
+.yellow {
+    -fx-border-color: #feca57;
+}
+
+.rounded {
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+}
+
+#setup-confirm-button:hover {
+    -fx-background-color: #007acc;
+}
+
+.back-button:hover {
+    -fx-background-color: #007acc;
+}

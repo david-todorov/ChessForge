@@ -1,0 +1,96 @@
+package com.model.user.datastorage;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import com.model.user.User;
+import com.model.user.UserImpl;
+import com.other.DirectoryConfigurations;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+
+
+
+
+public final class UsersDataStorageJsonStrategy implements UsersDataStorageStrategy {
+
+    private final Type jsonUserTokenType = new JsonUserTypeToken().getType();
+    private Map<String, User> users;
+
+    private static class JsonUserTypeToken extends TypeToken<Map<String, UserImpl>> {
+
+    }
+
+
+    private void load() throws IOException {
+        if (this.users == null) {
+            DirectoryConfigurations.validateUsersDataFile();
+            final String jsonString = Files.readString(Path.of(DirectoryConfigurations.USERS_DATA_FILE_PATH),
+                    StandardCharsets.UTF_8);
+            this.users = new Gson().fromJson(jsonString, this.jsonUserTokenType);
+            if (this.users == null) {
+                this.users = new HashMap<>();
+            }
+        }
+    }
+
+
+    private void save() throws IOException {
+        this.load();
+        final String json = new GsonBuilder().setPrettyPrinting().create().toJson(users, this.jsonUserTokenType);
+        final Path jsonPath = Path.of(DirectoryConfigurations.USERS_DATA_FILE_PATH);
+        Files.deleteIfExists(jsonPath);
+        Files.writeString(jsonPath, json, StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+    }
+
+
+    @Override
+    public boolean isPresent(final String username) throws IOException {
+        this.load();
+        return this.users.containsKey(username);
+    }
+
+
+    @Override
+    public Optional<User> getUserByUsername(final String username) throws IOException {
+        this.load();
+        return Optional.ofNullable(this.users.get(username));
+    }
+
+    @Override
+    public Set<User> getAllUsers() throws IOException {
+        this.load();
+        return new HashSet<>(this.users.values());
+    }
+
+
+    @Override
+    public void put(final User user) throws IOException {
+        this.load();
+        this.users.put(user.getUsername(), user);
+        this.save();
+    }
+
+
+    @Override
+    public Optional<User> remove(final String username) throws IOException {
+        this.load();
+        final Optional<User> removed = Optional.ofNullable(this.users.remove(username));
+        if (removed.isPresent()) {
+            this.save();
+        }
+        return removed;
+    }
+
+}
